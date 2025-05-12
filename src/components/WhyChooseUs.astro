@@ -1,0 +1,93 @@
+---
+const benefits = [
+  {
+    title: "Professional Touch",
+    description: "Our therapists are trained to provide a professional, respectful experience with every treatment.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
+    </svg>`
+  },
+  {
+    title: "Expert Male Therapists",
+    description: "Our skilled male therapists provide professional and effective treatments.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+    </svg>`
+  },
+  {
+    title: "Home Service",
+    description: "Enjoy professional treatments in the comfort and privacy of your own space.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+    </svg>`
+  },
+  {
+    title: "Clean, Sterile Equipment",
+    description: "We maintain the highest standards of hygiene with sanitized equipment for every session.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+    </svg>`
+  },
+  {
+    title: "Friendly Communication",
+    description: "Clear, respectful communication from booking to treatment, with attentive service.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>`
+  },
+  {
+    title: "Peaceful, Private Experience",
+    description: "Enjoy a tranquil session with complete privacy and a focus on your comfort.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>`
+  }
+];
+---
+
+<section id="why-choose-us" class="py-16 md:py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 animate-on-scroll">
+        Why <span class="text-primary-600">Choose Us</span>
+      </h2>
+      <p class="text-lg text-neutral-700 max-w-2xl mx-auto animate-on-scroll" style="transition-delay: 0.2s">
+        We pride ourselves on delivering an exceptional experience that prioritizes your comfort,
+        privacy, and wellbeing.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {benefits.map((benefit, index) => (
+        <div class="bg-primary-50 rounded-xl p-6 animate-on-scroll" style={`transition-delay: ${0.2 + index * 0.1}s`}>
+          <div class="text-primary-600 mb-4" set:html={benefit.icon} />
+          <h3 class="text-xl font-display font-semibold mb-2 text-neutral-800">{benefit.title}</h3>
+          <p class="text-neutral-700">{benefit.description}</p>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-12 md:mt-16 bg-accent-50 rounded-xl overflow-hidden shadow-sm animate-on-scroll" style="transition-delay: 0.6s">
+      <div class="flex flex-col md:flex-row">
+        <div class="md:w-1/2 p-8 md:p-10">
+          <h3 class="text-2xl font-display font-semibold mb-4 text-accent-900">Your comfort is our priority</h3>
+          <p class="text-neutral-700 mb-6">
+            From the moment you book until after your session is complete, we're dedicated to ensuring you
+            have a peaceful, restorative experience that leaves you feeling renewed.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#booking" class="btn btn-primary bg-accent-600 hover:bg-accent-700">Book Your Session</a>
+            <a href="#testimonials" class="btn btn-secondary text-accent-700 border-accent-600">Read Testimonials</a>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <img 
+            src="https://cdn.pixabay.com/photo/2020/07/08/01/27/spa-5382250_960_720.jpg"
+            alt="Professional massage therapy" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+---
+const testimonials = [
+  {
+    name: "Ahmad",
+    service: "Traditional Massage",
+    quote: "Excellent service! The massage was very professional and helped relieve my back pain. Highly recommended!",
+    avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+  },
+  {
+    name: "Rizwan",
+    service: "Dry Cupping",
+    quote: "The cupping session was amazing. The therapist was skilled and professional. I felt much better afterward.",
+    avatar: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg"
+  },
+  {
+    name: "Hassan",
+    service: "Combo Session",
+    quote: "The combo session was exactly what I needed. Great value and the convenience of having it at home made it even better.",
+    avatar: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg"
+  },
+  {
+    name: "Kamal",
+    service: "Traditional Massage",
+    quote: "Very professional service. The therapist was punctual and the massage techniques were excellent.",
+    avatar: "https://images.pexels.com/photos/1462980/pexels-photo-1462980.jpeg"
+  }
+];
+---
+
+<section id="testimonials" class="py-16 md:py-24 bg-neutral-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 animate-on-scroll">
+        Client <span class="text-primary-600">Testimonials</span>
+      </h2>
+      <p class="text-lg text-neutral-700 max-w-2xl mx-auto animate-on-scroll" style="transition-delay: 0.2s">
+        Don't just take our word for it. Here's what our clients have to say about their experiences.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div class="bg-white rounded-xl shadow-sm p-6 relative animate-on-scroll" style={`transition-delay: ${0.2 + index * 0.1}s`}>
+          <div class="absolute -top-5 left-6">
+            <svg class="h-10 w-10 text-primary-300" fill="currentColor" viewBox="0 0 32 32">
+              <path d="M10 8c-2.209 0-4 1.791-4 4v12h12v-16h-8zM6 12c0-2.209 1.791-4 4-4v0h8v16h-12v-12zM26 8c-2.209 0-4 1.791-4 4v12h12v-16h-8zM22 12c0-2.209 1.791-4 4-4v0h8v16h-12v-12z"></path>
+            </svg>
+          </div>
+          <div class="pt-4">
+            <p class="text-neutral-700 mb-6 italic">{testimonial.quote}</p>
+            <div class="flex items-center">
+              <img 
+                src={testimonial.avatar} 
+                alt={testimonial.name} 
+                class="w-12 h-12 rounded-full object-cover mr-4"
+              />
+              <div>
+                <h4 class="font-display font-semibold text-primary-800">{testimonial.name}</h4>
+                <p class="text-sm text-neutral-600">{testimonial.service}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center animate-on-scroll" style="transition-delay: 0.6s">
+      <a href="#booking" class="btn btn-primary">Experience It Yourself</a>
+    </div>
+  </div>
+</section>

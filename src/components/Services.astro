@@ -1,0 +1,76 @@
+---
+const services = [
+  {
+    id: 'massage',
+    title: 'Gentle Traditional Massage',
+    description: 'Relieve body tension, improve circulation, and unwind with a calming touch. Our therapists use techniques that soothe muscles and promote relaxation.',
+    image: 'https://cdn.pixabay.com/photo/2022/09/13/21/47/massage-7452918_1280.jpg',
+    benefits: ['Relieves muscle tension', 'Improves circulation', 'Promotes relaxation', 'Reduces stress']
+  },
+  {
+    id: 'cupping',
+    title: 'Dry Cupping (Bekam Angin)',
+    description: 'A traditional detox method to remove internal wind and toxins — ideal for fatigue, headaches, poor sleep, and body aches. Experience this gentle suction therapy.',
+    image: 'https://th.bing.com/th/id/OIP.WPfrFDdT_kQk3CWimyBm7wAAAA?cb=iwc2&rs=1&pid=ImgDetMain',
+    benefits: ['Removes toxins', 'Relieves headaches', 'Improves sleep quality', 'Eases body aches']
+  },
+  {
+    id: 'combo',
+    title: 'Combo Session: Massage + Cupping',
+    description: 'A full-body reset. Experience the benefits of both massage and cupping in one complete session for maximum relaxation and therapeutic effect.',
+    image: 'https://cdn.pixabay.com/photo/2018/11/05/09/54/massage-3795692_1280.jpg',
+    benefits: ['Complete relaxation', 'Comprehensive treatment', 'Enhanced circulation', 'Maximum therapeutic effect']
+  }
+];
+---
+
+<section id="services" class="py-16 md:py-24 bg-primary-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 animate-on-scroll">
+        Our <span class="text-primary-600">Services</span>
+      </h2>
+      <p class="text-lg text-neutral-700 max-w-2xl mx-auto animate-on-scroll" style="transition-delay: 0.2s">
+        Choose from our range of professional, therapeutic treatments designed to restore balance
+        and promote wellbeing.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      {services.map((service, index) => (
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow animate-on-scroll" style={`transition-delay: ${0.2 + index * 0.1}s`}>
+          <div class="h-48 overflow-hidden">
+            <img 
+              src={service.image} 
+              alt={service.title} 
+              class="w-full h-full object-cover transition-transform hover:scale-105 duration-700"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-display font-semibold text-primary-700 mb-3">{service.title}</h3>
+            <p class="text-neutral-700 mb-4">{service.description}</p>
+            <div class="mb-5">
+              <h4 class="text-sm font-semibold uppercase text-neutral-500 mb-2">Benefits:</h4>
+              <ul class="grid grid-cols-2 gap-1">
+                {service.benefits.map((benefit) => (
+                  <li class="flex items-center text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <a href="#booking" class="text-primary-600 font-medium hover:text-primary-800 transition-colors flex items-center">
+              Book this service
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

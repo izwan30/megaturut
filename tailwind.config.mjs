@@ -1,0 +1,82 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#f0f9f1',
+          100: '#dcefe0',
+          200: '#bbd9c5',
+          300: '#8ebda3',
+          400: '#5c9c7d',
+          500: '#3d7d5f',
+          600: '#2d644d',
+          700: '#265040',
+          800: '#203e33',
+          900: '#1b352b',
+          950: '#0c1f19',
+        },
+        secondary: {
+          50: '#eff8ff',
+          100: '#deeffe',
+          200: '#c4e0fb',
+          300: '#9fcbf6',
+          400: '#75acee',
+          500: '#5189e3',
+          600: '#3c6bd5',
+          700: '#3358c3',
+          800: '#304a9f',
+          900: '#2a407e',
+          950: '#1e2a4d',
+        },
+        accent: {
+          50: '#fdf7ee',
+          100: '#f9ecd5',
+          200: '#f3d6aa',
+          300: '#ecb974',
+          400: '#e59d48',
+          500: '#e0842d',
+          600: '#ce6a22',
+          700: '#ab531e',
+          800: '#88431f',
+          900: '#6d381c',
+          950: '#3c1c0e',
+        },
+        neutral: {
+          50: '#f7f7f5',
+          100: '#eeeeea',
+          200: '#ddddda',
+          300: '#c3c3bd',
+          400: '#aaaa9c',
+          500: '#92917f',
+          600: '#7a7969',
+          700: '#666257',
+          800: '#55524a',
+          900: '#46443e',
+          950: '#25231f',
+        },
+      },
+      fontFamily: {
+        display: ['Quicksand', 'sans-serif'],
+        body: ['Lato', 'sans-serif'],
+      },
+      animation: {
+        'fade-in': 'fadeIn 1s ease-in-out',
+        'slide-up': 'slideUp 0.5s ease-out',
+        'pulse-slow': 'pulse 3s infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+    },
+  },
+  plugins: [],
+}
